@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect} from 'react'
+import Header from './Header'
+import Gradient from './Gradient'
+import AllGradients from './AllGradients'
+import Cards from './Cards'
+import Colors from './Colors'
+import Footer from './Footer'
+import {BrowserRouter as Router, Switch, Route, useLocation, withRouter} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    function _scroll(props){
+        const {pathname} = useLocation()
+        useEffect(() => {
+          window.scrollTo(0,0)
+        }, [pathname])
+        return props.children
+      }
+  
+      const ScrollToTop = withRouter(_scroll)
+    return (
+        <Router >
+            <ScrollToTop>
+            <Header/>
+            <Switch>
+                <Route path='/' exact>
+                    <Gradient/>
+                    <Cards/>
+                </Route>
+                <Route path='/gradients'>
+                    <AllGradients/>
+                </Route>
+                <Route path='/colors'>
+                    <Colors/>
+                </Route>
+            </Switch>
+            <Footer/>
+            </ScrollToTop>
+        </Router>
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,44 @@
+const colors = [
+    {
+        id:0,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+    {
+        id:1,
+        color1:'#2F329F',
+        color2:'#2FB99F'
+    },
+    {
+        id:2,
+        color1:'#C5B99F',
+        color2:'#C5352F'
+    },
+    {
+        id:4,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+    {
+        id:5,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+    {
+        id:6,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+    {
+        id:7,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+    {
+        id:8,
+        color1:'#3EB82F',
+        color2:'#B1B82F',
+    },
+]
+
+export default colors
